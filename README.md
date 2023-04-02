@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://github.com/veloce-web/veloce/raw/master/res/veloce_logo.png" alt="Veloce Logo" style="height: 269px; width:269px;"/>
+<img src="./res/veloce_banner.png" alt="Veloce Logo" style="height: 244px;"/>
 
 <p>kinda fast web framework</p>
 
@@ -27,3 +27,7 @@ Please don't use it just yet, as its very early on.
 ## Contributing
 
 I am not accepting contributions right now, but you can still fork it!
+
+## Why?
+
+I needed something of my own and this "framework" was made for "SourceDen"

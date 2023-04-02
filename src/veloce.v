@@ -8,12 +8,21 @@ enum RouteType {
 	delete
 }
 
+pub type RouteFn = fn (ctx Context) int
+
 struct Route {
 	typ  RouteType
 	addr string
+	func RouteFn
 }
 
-struct Handler {}
+struct Handler {
+	routes []Route
+}
+
+struct Context {
+	// TODO: fill this up with goodies
+}
 
 fn (h Handler) handle(req http.Request) http.Response {
 	mut res := http.Response{
@@ -26,8 +35,6 @@ fn (h Handler) handle(req http.Request) http.Response {
 }
 
 pub struct Server {
-pub:
-	multi bool
 mut:
 	srv    http.Server
 	port   int
@@ -35,20 +42,16 @@ mut:
 }
 
 pub fn (mut s Server) serve() {
-	if s.multi {
-		s.srv.listen_and_serve()
-	} else {
-	}
+	s.srv.listen_and_serve()
 }
 
-pub fn create(port int, multi_srv bool) Server {
+pub fn create(port int) Server {
 	tmpnew := Server{
 		srv: http.Server{
 			handler: Handler{}
 			port: port
 		}
 		port: port
-		multi: multi_srv
 	}
 
 	return tmpnew

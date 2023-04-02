@@ -1,7 +1,7 @@
 Module {
 	name: 'veloce'
-	description: ''
-	version: ''
-	license: ''
+	description: 'kinda fast web framework '
+	version: '0.1a'
+	license: '0BSD'
 	dependencies: []
 }
